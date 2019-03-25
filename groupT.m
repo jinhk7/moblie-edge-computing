@@ -1,6 +1,6 @@
 function [Tcloud,Tlocal] = groupT(T,Tnum)
-%UNTITLED10 此处显示有关此函数的摘要
-%   此处显示详细说明
+%UNTITLED10 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
 m=0;
 for i = 1:Tnum
     if T(i,2)==0
@@ -20,4 +20,3 @@ for i = 1:Tnum
 end
 
 end
-

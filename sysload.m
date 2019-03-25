@@ -1,6 +1,6 @@
 function [t,e,eloc,eser,tloc,tser,tcomp] = sysload(C,L,Ptu,Pcpu)
-%UNTITLED17 此处显示有关此函数的摘要
-%   此处显示详细说明
+%UNTITLED17 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
 if isempty(C)
     tcomp = zeros(0);
 else

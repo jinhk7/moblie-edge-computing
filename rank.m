@@ -1,6 +1,6 @@
 function [C,L] = rank(Tcloud,Tlocal)
-%UNTITLED15 此处显示有关此函数的摘要
-%   此处显示详细说明
+%UNTITLED15 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
 f=0;g=0;
 for i = 1:size(Tcloud,1)
     if Tcloud(i,7) < Tcloud(i,6)
@@ -24,6 +24,5 @@ F1 = sortrows(F,7);
 G1 = sortrows(G,6,'descend');
 
 C = cat(1, F1, G1) ;
-L = sortrows(Tlocal,5); %本地执行序列L
+L = sortrows(Tlocal,5); %鏈湴鎵ц搴忓垪L
 end
-
