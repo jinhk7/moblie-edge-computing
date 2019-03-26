@@ -4,7 +4,7 @@ clc;clear;close all;
 
 floc=1000  ;      %1Ghz
 fser=100000 ;     %100 Ghz
-Tnum = 100;        %任务数量 
+Tnum = 20;        %任务数量 
 Pcpu = 0.5 ;      %0.5W
 Ptu = 2 ;         %2W
 Rptu = 2 ;       %Mbps
@@ -29,6 +29,7 @@ for i = 1:Tnum
     end
 
 end
+
 
 Q = T(:,2);%控制序列
 Q0 = zeros(Tnum,1);%控制序列
