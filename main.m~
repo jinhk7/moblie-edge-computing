@@ -1,5 +1,5 @@
 %clear;
-
+clc;close all;
 
 T(:,2)=Q;
 [Tcloud,Tlocal]=groupT(T,Tnum); %T(:,2)
@@ -20,5 +20,3 @@ T(:,2)=Q0;
 [t0,e0] = sysload(C,L,Ptu,Pcpu);  %t,e
 K0 = rt*t0+re*e0;
 
-result = [Tnum,K,K0,K1];
-dlmwrite('result1.txt',result,'-append');
