@@ -9,6 +9,8 @@ for i = 1:size(Tcloud,1)
         g=g+1;
     end
 end
+
+
 F=zeros(f,7);
 G=zeros(g,7);
 
@@ -20,9 +22,9 @@ for i = 1:size(Tcloud,1)
         G(m,:) = Tcloud(i,:);m=m+1;
     end
 end
-F1 = sortrows(F,7);
+F1 = sortrows(F,7,'ascend');
 G1 = sortrows(G,6,'descend');
-
+%C = sortrows(  , [7 6] ,{'ascend' 'descend'}) ;
 C = cat(1, F1, G1) ;
 L = sortrows(Tlocal,5); %本地执行序列L
 end

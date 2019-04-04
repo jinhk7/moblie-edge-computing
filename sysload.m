@@ -19,13 +19,17 @@ tser = sum(tcomp) ;
 if isempty(tcomp)
     eser = 0;
     else
-    eser = sum(tcomp(1,:))*Ptu;
+    eser = sum(tcomp(:,1))*Ptu;
     
 end
 
+if isempty(L)
+tloc = sum(C(:,7));
+eloc = tloc * Pcpu;
+else
 tloc = sum(L(:,5)) ;
 eloc = tloc * Pcpu;
-
+end
 t = max(tloc,tser);
 e = eloc + eser ;
 end

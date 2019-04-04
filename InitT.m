@@ -4,18 +4,16 @@ clc;clear;close all;
 
 floc=1000  ;      %1Ghz
 fser=100000 ;     %100 Ghz
-Tnum = 200;        %任务数量 
+Tnum = 100;        %任务数量 
 Pcpu = 0.5 ;      %0.5W
 Ptu = 2 ;         %2W
-Rptu = 2 ;       %Mbps
+Rptu = 20 ;        %Mbps
 rt = 0.5;         %时间权重
 re = 0.5;         %能耗权重
 K = 0;            %负载K
-%A(i,:)提取矩阵A的第i行 A(:,i)提取矩阵A的第i列
 
-[T] = initTfunc(Tnum,floc,fser,Rptu);
+[T] = initTfunc(Tnum,floc,fser,Rptu); %初始化任务集T
 
-
-Q = T(:,2);%控制序列
-Q0 = zeros(Tnum,1);%控制序列
-Q1 = zeros(Tnum,1)+1;%控制序列
+Q = T(:,2);             %生成控制序列Q
+Q0 = zeros(Tnum,1);     %生成控制序列Q0
+Q1 = zeros(Tnum,1)+1;   %生成控制序列Q1

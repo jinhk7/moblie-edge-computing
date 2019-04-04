@@ -1,9 +1,9 @@
-function [Kbest,Qbest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re)
+function [Kbest,Qbest,Tbest,Ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re)
 %UNTITLED9 此处显示有关此函数的摘要
 %   此处显示详细说明
 %N = 50;                         % 初始种群个数
 %d = 1;                          % 空间维数
-ger = 100;                      % 最大迭代次数   
+ger = 1000;                      % 最大迭代次数   
 %w = 0.8;                        % 惯性权重
 %c1 = 0.5;                       % 自我学习因子
 %c2 = 0.5;                       % 群体学习因子 %
@@ -23,16 +23,19 @@ for i= 1:1:Tnum
 end
 s = zeros ( Tnum,1);
 pbest = x; 
-pbest_rate = KK(T,Tnum,x,Ptu,Pcpu,rt,re);  %初始化pbest
+[pbest_rate,tbest,ebest] = KK(T,Tnum,x,Ptu,Pcpu,rt,re);  %初始化pbest
+
 
 for t = 1:1:ger
     charac = x;
     
-    Kval = KK(T,Tnum,charac,Ptu,Pcpu,rt,re); 
+    [Kval ,tb,eb]= KK(T,Tnum,charac,Ptu,Pcpu,rt,re); 
     
     if Kval < pbest_rate
         pbest = charac;
         pbest_rate = Kval;
+        tbest = tb ;
+        ebest = eb ;
     end
     
     for i = 1:1:Tnum
@@ -46,7 +49,9 @@ for t = 1:1:ger
         %charac = x;
     end
 end
-Qbest = pbest ;
+Qbest = pbest ;!
 Kbest = pbest_rate;
+Tbest = tbest;
+Ebest = ebest;
 end
 
