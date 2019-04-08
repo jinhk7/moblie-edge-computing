@@ -1,7 +1,7 @@
 %clear;
-[K0,t0,e0]=KK(T,Tnum,Q0,Ptu,Pcpu,rt,re);
-[K,t,e,C,L,]=KK(T,Tnum,Q,Ptu,Pcpu,rt,re);
-[K1,t1,e1]=KK(T,Tnum,Q1,Ptu,Pcpu,rt,re);
+[Klocal,tlocal,elocal]=KK(T,Tnum,Q0,Ptu,Pcpu,rt,re);
+[K,t,e,C,L]=KK(T,Tnum,Q,Ptu,Pcpu,rt,re);
+[Kcloud,tcloud,ecloud]=KK(T,Tnum,Q1,Ptu,Pcpu,rt,re);
 %% 初始化种群
 
 
