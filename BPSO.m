@@ -49,7 +49,7 @@ for t = 1:1:ger
         %charac = x;
     end
 end
-Qbest = pbest ;!
+Qbest = pbest ;
 Kbest = pbest_rate;
 Tbest = tbest;
 Ebest = ebest;

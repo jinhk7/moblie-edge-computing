@@ -1,5 +1,5 @@
 clc;clear;close all
-testT = [5,10,15,20,25]*2;
+testT = [1,2,3,4,5,6,]*5;
 
 for i = testT
 floc=1  ;      %1Ghz
@@ -7,7 +7,7 @@ fser=100 ;     %100 Ghz
 Tnum = i;        %任务数量 
 Pcpu = 0.5 ;      %0.5W
 Ptu = 2 ;         %2W
-Rptu = 50 ;        %Mbps
+Rptu = 2 ;        %Mbps
 rt = 0.5;         %时间权重
 re = 0.5;         %能耗权重
 K = 0;            %负载K
@@ -36,6 +36,6 @@ result = [Tnum,K,K0,K1,Kbest];
 dlmwrite('resultk.txt',result,'-append');
 clc;clear;close all;
 end 
-%load resulte.txt;
-%efplot(resulte);
+load resulte.txt;
+efplot(resulte);
 
