@@ -1,6 +1,9 @@
 clc;clear;close all
 testT = [5,10,15,20,25,30,35,40,45,50]*4;
 now = datestr(now,30);
+Path = '/Users/Johnny/Documents/06Workplace/MATLAB/moblie-edge-computing/Results/';
+path = strcat(Path,now,'/');
+mkdir (path);
 for i = testT
 floc=1  ;      %1Ghz
 fser=100 ;     %100 Ghz
@@ -27,25 +30,27 @@ Q1 = zeros(Tnum,1)+1;   %生成控制序列Q1
 %dlmwrite('result1.txt',result,'-append');
 
 resulte = [Tnum,e,e0,e1,ebest];
-resultename = strcat(now,'-','resulte.txt');
-dlmwrite(resultename,resulte,'-append');
+resultename = strcat(now,'能耗');
+dlmwrite(strcat(path,resultename),resulte,'-append');
 
 resultk = [Tnum,K,K0,K1,Kbest];
-resultkname = strcat(now,'-','resultk.txt'); 
-dlmwrite(resultkname,resultk,'-append');
+resultkname = strcat(now,'负载'); 
+dlmwrite(strcat(path,resultkname),resultk,'-append');
 
 resulttime = [Tnum,t,t0,t1,tbest];
-resulttimename = strcat(now,'-','resulttime.txt');
-dlmwrite(resulttimename,resulttime,'-append');
+resulttimename = strcat(now,'延时');
+dlmwrite(strcat(path,resulttimename),resulttime,'-append');
 
 end
 
-resulte = load(resultename);
+resulte = load(strcat(path,resultename));
 figure(1);efplot(resulte);
+saveas(1,strcat(path,resultename),'png');
 
-resultk = load(resultkname);
+resultk = load(strcat(path,resultkname));
 figure(2);kfplot(resultk);
+saveas(2,strcat(path,resultkname),'png');
 
-resulttime = load(resulttimename);
+resulttime = load(strcat(path,resulttimename));
 figure(3);tfplot(resulttime);
-
+saveas(3,strcat(path,resulttimename),'png');
