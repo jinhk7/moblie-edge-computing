@@ -1,11 +1,11 @@
 %clear;
 [Klocal,tlocal,elocal]=KK(T,Tnum,Q0,Ptu,Pcpu,rt,re);
-[K,t,e,C,L]=KK(T,Tnum,Q,Ptu,Pcpu,rt,re);
+[K,t,e]=KK(T,Tnum,Q,Ptu,Pcpu,rt,re);
 [Kcloud,tcloud,ecloud,C,L]=KK(T,Tnum,Q1,Ptu,Pcpu,rt,re);
 %% 初始化种群
 
 
-[Kbest,Qbest,Tbest,Ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re);
+[Kbest,Qbest,Tbest,Ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re,Gnum);
 %[Kbest,Qbest,tbest,ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re);
 %result = [Tnum,K,K0,K1];
 %dlmwrite('result1.txt',result,'-append');

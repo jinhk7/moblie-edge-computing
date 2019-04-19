@@ -1,9 +1,9 @@
-function [Kbest,Qbest,Tbest,Ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re)
+function [Kbest,Qbest,Tbest,Ebest] = BPSO(T,Tnum,Q,Ptu,Pcpu,rt,re,Gnum)
 %UNTITLED9 此处显示有关此函数的摘要
 %   此处显示详细说明
 %N = 50;                         % 初始种群个数
 %d = 1;                          % 空间维数
-ger = 20000;                      % 最大迭代次数   
+ger = Gnum;                      % 最大迭代次数   
 %w = 0.8;                        % 惯性权重
 %c1 = 0.5;                       % 自我学习因子
 %c2 = 0.5;                       % 群体学习因子 %
