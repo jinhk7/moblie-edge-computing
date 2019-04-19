@@ -1,7 +1,7 @@
 clc;clear;close all
 
 step = 10;
-Num = 1:1:10;
+Num = 1:1:9;
 testT = Num*step;
 
 now = datestr(now,30);
