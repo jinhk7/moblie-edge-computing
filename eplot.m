@@ -1,4 +1,4 @@
-function efplot(result)
+function eplot(result)
 %f = @(x) x;
 
 %x = result1(:,1); 

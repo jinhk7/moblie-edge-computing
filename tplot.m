@@ -1,4 +1,4 @@
-function tfplot(result)
+function tplot(result)
 %f = @(x) x;
 
 %x = result1(:,1); 

@@ -4,10 +4,10 @@ clc;clear;close all;
 
 floc=1  ;      %1Ghz
 fser=100 ;     %100 Ghz
-Tnum = 200;        %任务数量 
+Tnum = 20;        %任务数量 
 Pcpu = 0.5 ;      %0.5W
 Ptu = 2 ;         %2W
-Rptu = 50 ;        %Mbps
+Rptu = 5 ;        %Mbps
 rt = 0.5;         %时间权重
 re = 0.5;         %能耗权重
 K = 0;            %负载K

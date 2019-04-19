@@ -1,4 +1,4 @@
-function kfplot(result)
+function kplot(result)
 %f = @(x) x;
 
 %x = result1(:,1); 
