@@ -12,11 +12,17 @@ for i = 1:Tnum
     T (i,7)=T(i,4)/Rptu;        %任务上传时间 单位秒s
 
     % 初始化任务是否迁移（随机初始化）
-    if rand()>=0.5 %%任务是否迁移
+   % if rand()>=0.5 %%任务是否迁移
+   %     T (i,2)=1;
+   % else
+    %    T(i,2)=0;
+   % end
+    if mod(T(i,1),2)==0 %%任务是否迁移
         T (i,2)=1;
     else
         T(i,2)=0;
     end
+
 
 end
 end
