@@ -16,13 +16,13 @@ elseif isempty(L)           %cloud
     tready=zeros(size(C,1),1);                          %预分配空间
     %计算时间t
     for i = 1:size(C,1)
-         if i == 1 
-          tready(i,1) = C(i,7);
-          tcomp(i,1) = C(i,6) + C(i,7);
-         elseif i>1 
-          tready(i,1) = C(i,7)+C(i-1,7) ;
-          tcomp(i,1) = max(tready(i,1),tcomp(i-1,1)) +C(i,6);
-         end
+        if i == 1
+            tready(i,1) = C(i,7);
+            tcomp(i,1) = C(i,6) + C(i,7);
+        elseif i>1
+            tready(i,1) = C(i,7)+C(i-1,7) ;
+            tcomp(i,1) = max(tready(i,1),tcomp(i-1,1)) +C(i,6);
+        end
     end
     %eser = sum(C(:,7))*Ptu;
     tser = sum(tcomp);
@@ -35,13 +35,13 @@ else
     tready=zeros(size(C,1),1);                          %预分配空间
     %计算时间t
     for i = 1:size(C,1)
-         if i == 1 
-          tready(i,1) = C(i,7);
-          tcomp(i,1) = C(i,6) + C(i,7);
-         else 
-          tready(i,1) = C(i,7)+C(i-1,7) ;
-          tcomp(i,1) = max(tready(i,1),tcomp(i-1,1)) +C(i,6);
-         end
+        if i == 1
+            tready(i,1) = C(i,7);
+            tcomp(i,1) = C(i,6) + C(i,7);
+        else
+            tready(i,1) = C(i,7)+C(i-1,7) ;
+            tcomp(i,1) = max(tready(i,1),tcomp(i-1,1)) +C(i,6);
+        end
     end
     tloc = max(sum(L(:,5)),sum(C(:,7))) ; %%
     eloc = tloc * Pcpu;

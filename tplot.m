@@ -25,7 +25,7 @@ plot(x,e,'-+b',x,e0,'-or',x,e1,'-^k',x,ebest,'-*m'); title('延时-任务')     
 axis([0,n*Xjg+Xjg,0,YM])  %确定x轴与y轴框图大小
 set(gca,'XTick',0:Xjg(1,1):n*Xjg+Xjg); %x轴范围，间隔1
 set(gca,'YTick',0:YM/20:YM); %y轴范围0-100，间隔5
-legend('随机迁移策略','本地执行','云上执行','Union迁移策略','Location','northwest');   %右上角标注
+legend('"一半一半"策略','本地优先策略','云服务器优先策略','优化联合任务迁移策略','Location','northwest');   %右上角标注
 xlabel('任务数量')  %x轴坐标描述
 ylabel('延时/ms') %y轴坐标描述
 end
